@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  (c) 2014-2018 Microsoft Corporation  -->
+<policyDefinitionResources xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" revision="1.0" schemaVersion="1.0" xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+  <displayName>Disable Services</displayName>
+  <description>Disable Services settings</description>
+  <resources>
+    <stringTable>
+      <string id="SUPPORTED_Server_2012R2_up">Windows Server 2012 R2 and up</string>
+      <string id="Cat_DisableServices">Disable Services</string>
+      <string id="Cat_DisableServices_UserServices">Per-User Services</string>
+      <string id="Cat_DisableServices_Other">Other Services</string>
+      <string id="Pol_DisableService_PimIndexMaintenanceSvc">Disable Contact Data Service</string>
+      <string id="Pol_DisableService_PimIndexMaintenanceSvc_Help">This user service is used for Connected Devices Platform scenarios.
+
+If you enable this policy, the startup type for this service will be set to DISABLED.
+
+If you disable this policy, the startup type for this service will be set to MANUAL (which is the default).
+
+If you set this policy to not configured, the startup type for this service will remain UNCHANGED.
+
+Warning: Setting this policy from ENABLED to NOT CONFIGURED will NOT revert the service startup type to the default setting. In order to restore the defaults, DISABLE the setting, apply the policy to the machines and then revert to NOT CONFIGURED.
+      
+Reference: https://docs.microsoft.com/en-us/windows/application-management/per-user-services-in-windows</string>
+      <string id="Pol_DisableService_OneSyncSvc">Disable Sync Host Service</string>
+      <string id="Pol_DisableService_OneSyncSvc_Help">Synchronizes mail, contacts, calendar, and other user data. Mail and other applications dependent on this service don't work correctly when this service is not running.
+
+If you enable this policy, the startup type for this service will be set to DISABLED.
+
+If you disable this policy, the startup type for this service will be set to AUTOMATIC (which is the default).
+
+If you set this policy to not configured, the startup type for this service will remain UNCHANGED.
+
+Warning: Setting this policy from ENABLED to NOT CONFIGURED will NOT revert the service startup type to the default setting. In order to restore the defaults, DISABLE the setting, apply the policy to the machines and then revert to NOT CONFIGURED.
+      
+Reference: https://docs.microsoft.com/en-us/windows/application-management/per-user-services-in-windows</string>
+      
+      <string id="Pol_DisableService_CDPUserSvc">Disable Connected Devices Platform Service</string>
+      <string id="Pol_DisableService_CDPUserSvc_Help">Used for Connected Devices Platform scenarios.
+
+If you enable this policy, the startup type for this service will be set to DISABLED.
+
+If you disable this policy, the startup type for this service will be set to AUTOMATIC (which is the default).
+
+If you set this policy to not configured, the startup type for this service will remain UNCHANGED.
+
+Warning: Setting this policy from ENABLED to NOT CONFIGURED will NOT revert the service startup type to the default setting. In order to restore the defaults, DISABLE the setting, apply the policy to the machines and then revert to NOT CONFIGURED.
+      
+Reference: https://docs.microsoft.com/en-us/windows/application-management/per-user-services-in-windows</string>
+
+      <string id="Pol_DisableService_UnistoreSvc">Disable User Data Storage Service</string>
+      <string id="Pol_DisableService_UnistoreSvc_Help">Handles storage of structured user data, including contact info, calendars, and messages. If you stop or disable this service, apps that use this data might not work correctly.
+
+If you enable this policy, the startup type for this service will be set to DISABLED.
+
+If you disable this policy, the startup type for this service will be set to MANUAL (which is the default).
+
+If you set this policy to not configured, the startup type for this service will remain UNCHANGED.
+
+Warning: Setting this policy from ENABLED to NOT CONFIGURED will NOT revert the service startup type to the default setting. In order to restore the defaults, DISABLE the setting, apply the policy to the machines and then revert to NOT CONFIGURED.
+      
+Reference: https://docs.microsoft.com/en-us/windows/application-management/per-user-services-in-windows</string>
+
+      <string id="Pol_DisableService_UserDataSvc">Disable User Data Access Service</string>
+      <string id="Pol_DisableService_UserDataSvc_Help">Provides apps access to structured user data, including contact info, calendars, and messages. If you stop or disable this service, apps that use this data might not work correctly.
+
+If you enable this policy, the startup type for this service will be set to DISABLED.
+
+If you disable this policy, the startup type for this service will be set to MANUAL (which is the default).
+
+If you set this policy to not configured, the startup type for this service will remain UNCHANGED.
+
+Warning: Setting this policy from ENABLED to NOT CONFIGURED will NOT revert the service startup type to the default setting. In order to restore the defaults, DISABLE the setting, apply the policy to the machines and then revert to NOT CONFIGURED.
+      
+Reference: https://docs.microsoft.com/en-us/windows/application-management/per-user-services-in-windows</string>
+
+      <string id="Pol_DisableService_WpnUserService">Disable Windows Push Notifications User Service</string>
+      <string id="Pol_DisableService_WpnUserService_Help">Hosts Windows notification platform, which provides support for local and push notifications. Supported notifications are tile, toast, and raw.
+
+If you enable this policy, the startup type for this service will be set to DISABLED.
+
+If you disable this policy, the startup type for this service will be set to MANUAL (which is the default).
+
+If you set this policy to not configured, the startup type for this service will remain UNCHANGED.
+
+Warning: Setting this policy from ENABLED to NOT CONFIGURED will NOT revert the service startup type to the default setting. In order to restore the defaults, DISABLE the setting, apply the policy to the machines and then revert to NOT CONFIGURED.
+
+Reference: https://docs.microsoft.com/en-us/windows/application-management/per-user-services-in-windows</string>
+
+      <string id="Pol_DisableService_MapsBroker">Disable Downloaded Maps Manager Service</string>
+      <string id="Pol_DisableService_MapsBroker_Help">Windows service for application access to downloaded maps. This service is started on-demand by application accessing downloaded maps. Disabling this service will prevent apps from accessing maps.
+
+SCM recommendation: Disabling breaks apps that rely on the service; OK to disable if apps not relying on it
+
+If you enable this policy, the startup type for this service will be set to DISABLED.
+
+If you disable this policy, the startup type for this service will be set to AUTOMATIC (which is the default).
+
+If you set this policy to not configured, the startup type for this service will remain UNCHANGED.
+
+Warning: Setting this policy from ENABLED to NOT CONFIGURED will NOT revert the service startup type to the default setting. In order to restore the defaults, DISABLE the setting, apply the policy to the machines and then revert to NOT CONFIGURED.
+
+Reference: https://blogs.technet.microsoft.com/secguide/2017/05/29/guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience/</string>
+
+      <string id="Pol_DisableService_Spooler">Disable Print Spooler Service</string>
+      <string id="Pol_DisableService_Spooler_Help">This service spools print jobs and handles interaction with the printer.  If you turn off this service, you won't be able to print or see your printers.
+
+SCM recommendation: OK to disable if not a print server or a DC
+
+If you enable this policy, the startup type for this service will be set to DISABLED.
+
+If you disable this policy, the startup type for this service will be set to AUTOMATIC (which is the default).
+
+If you set this policy to not configured, the startup type for this service will remain UNCHANGED.
+
+Warning: Setting this policy from ENABLED to NOT CONFIGURED will NOT revert the service startup type to the default setting. In order to restore the defaults, DISABLE the setting, apply the policy to the machines and then revert to NOT CONFIGURED.
+
+Reference: https://blogs.technet.microsoft.com/secguide/2017/05/29/guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience/</string>
+
+      <string id="Pol_DisableService_PcaSvc">Disable Program Compatibility Assistant Service Service</string>
+      <string id="Pol_DisableService_PcaSvc_Help">This service provides support for the Program Compatibility Assistant (PCA).  PCA monitors programs installed and run by the user and detects known compatibility problems. If this service is stopped, PCA will not function properly.
+
+SCM recommendation: OK to disable
+
+If you enable this policy, the startup type for this service will be set to DISABLED.
+
+If you disable this policy, the startup type for this service will be set to AUTOMATIC (which is the default).
+
+If you set this policy to not configured, the startup type for this service will remain UNCHANGED.
+
+Warning: Setting this policy from ENABLED to NOT CONFIGURED will NOT revert the service startup type to the default setting. In order to restore the defaults, DISABLE the setting, apply the policy to the machines and then revert to NOT CONFIGURED.
+
+Reference: https://blogs.technet.microsoft.com/secguide/2017/05/29/guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience/</string>
+
+      <string id="Pol_DisableService_ShellHWDetection">Disable Shell Hardware Detection Service</string>
+      <string id="Pol_DisableService_ShellHWDetection_Help">Provides notifications for AutoPlay hardware events.
+
+SCM recommendation: OK to disable
+
+If you enable this policy, the startup type for this service will be set to DISABLED.
+
+If you disable this policy, the startup type for this service will be set to AUTOMATIC (which is the default).
+
+If you set this policy to not configured, the startup type for this service will remain UNCHANGED.
+
+Warning: Setting this policy from ENABLED to NOT CONFIGURED will NOT revert the service startup type to the default setting. In order to restore the defaults, DISABLE the setting, apply the policy to the machines and then revert to NOT CONFIGURED.
+
+Reference: https://blogs.technet.microsoft.com/secguide/2017/05/29/guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience/</string>
+
+      <string id="Pol_DisableService_WpnService">Disable Windows Push Notifications System Service</string>
+      <string id="Pol_DisableService_WpnService_Help">This service runs in session 0 and hosts the notification platform and connection provider which handles the connection between the device and WNS server.
+
+SCM recommendation: OK to disable
+
+If you enable this policy, the startup type for this service will be set to DISABLED.
+
+If you disable this policy, the startup type for this service will be set to AUTOMATIC (which is the default).
+
+If you set this policy to not configured, the startup type for this service will remain UNCHANGED.
+
+Warning: Setting this policy from ENABLED to NOT CONFIGURED will NOT revert the service startup type to the default setting. In order to restore the defaults, DISABLE the setting, apply the policy to the machines and then revert to NOT CONFIGURED.
+
+Reference: https://blogs.technet.microsoft.com/secguide/2017/05/29/guidance-on-disabling-system-services-on-windows-server-2016-with-desktop-experience/</string>
+
+</stringTable>
+</resources>
+</policyDefinitionResources>

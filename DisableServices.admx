@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<policyDefinitions xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   revision="1.0"
+                   schemaVersion="1.0"
+                   xmlns="http://schemas.microsoft.com/GroupPolicy/2006/07/PolicyDefinitions">
+    <policyNamespaces>
+        <target prefix="DisableServices" namespace="Microsoft.Policies.DisableServices" />
+        <using prefix="windows" namespace="Microsoft.Policies.Windows" />
+    </policyNamespaces>
+    <resources minRequiredRevision="1.0" />
+    <supportedOn>
+        <definitions>
+            <definition name="SUPPORTED_Server_2012R2_up" displayName="$(string.SUPPORTED_Server_2012R2_up)" />
+        </definitions>
+    </supportedOn>
+    <categories>
+        <category name="Cat_DisableServices" displayName="$(string.Cat_DisableServices)"/>
+        <category name="Cat_DisableServices_UserServices" displayName="$(string.Cat_DisableServices_UserServices)">
+            <parentCategory ref="Cat_DisableServices"/>
+        </category>
+        <category name="Cat_DisableServices_Other" displayName="$(string.Cat_DisableServices_Other)">
+            <parentCategory ref="Cat_DisableServices"/>
+        </category>
+    </categories>
+    <policies>
+        <!-- Configure PimIndexMaintenanceSvc -->
+        <policy name="Pol_DisableServices_0001_PimIndexMaintenanceSvc"
+                class="Machine"
+                displayName="$(string.Pol_DisableService_PimIndexMaintenanceSvc)"
+                explainText="$(string.Pol_DisableService_PimIndexMaintenanceSvc_Help)"
+                key="System\CurrentControlSet\Services\PimIndexMaintenanceSvc"
+                >
+            <parentCategory ref="Cat_DisableServices_UserServices" />
+            <supportedOn ref="SUPPORTED_Server_2012R2_up" />
+            <enabledList defaultKey="System\CurrentControlSet\Services\PimIndexMaintenanceSvc">
+                <item valueName="Start">
+                    <value>
+                        <decimal value="4" />
+                    </value>
+                </item>
+                <item valueName="UserServiceFlags">
+                    <value>
+                        <decimal value="0" />
+                    </value>
+                </item>
+            </enabledList> 
+            <disabledList defaultKey="System\CurrentControlSet\Services\PimIndexMaintenanceSvc">
+                <item valueName="Start">
+                    <value>
+                        <decimal value="3" />
+                    </value>
+                </item>
+                <item valueName="UserServiceFlags">
+                    <value>
+                        <decimal value="3" />
+                    </value>
+                </item>
+            </disabledList>
+        </policy>
+        <!-- Configure OneSyncSvc -->
+        <policy name="Pol_DisableServices_0002_OneSyncSvc"
+                class="Machine"
+                displayName="$(string.Pol_DisableService_OneSyncSvc)"
+                explainText="$(string.Pol_DisableService_OneSyncSvc_Help)"
+                key="System\CurrentControlSet\Services\OneSyncSvc"
+                >
+            <parentCategory ref="Cat_DisableServices_UserServices" />
+            <supportedOn ref="SUPPORTED_Server_2012R2_up" />
+            <enabledList defaultKey="System\CurrentControlSet\Services\OneSyncSvc">
+                <item valueName="Start">
+                    <value>
+                        <decimal value="4" />
+                    </value>
+                </item>
+                <item valueName="UserServiceFlags">
+                    <value>
+                        <decimal value="0" />
+                    </value>
+                </item>
+            </enabledList>
+            <disabledList defaultKey="System\CurrentControlSet\Services\OneSyncSvc">
+                <item valueName="Start">
+                    <value>
+                        <decimal value="2" />
+                    </value>
+                </item>
+                <item valueName="UserServiceFlags">
+                    <value>
+                        <delete />
+                    </value>
+                </item>
+            </disabledList>
+        </policy>
+        <!-- Configure CDPUserSvc -->
+        <policy name="Pol_DisableServices_0003_CDPUserSvc"
+                class="Machine"
+                displayName="$(string.Pol_DisableService_CDPUserSvc)"
+                explainText="$(string.Pol_DisableService_CDPUserSvc_Help)"
+                key="System\CurrentControlSet\Services\CDPUserSvc"
+                >
+            <parentCategory ref="Cat_DisableServices_UserServices" />
+            <supportedOn ref="SUPPORTED_Server_2012R2_up" />
+            <enabledList defaultKey="System\CurrentControlSet\Services\CDPUserSvc">
+                <item valueName="Start">
+                    <value>
+                        <decimal value="4" />
+                    </value>
+                </item>
+                <item valueName="UserServiceFlags">
+                    <value>
+                        <decimal value="0" />
+                    </value>
+                </item>
+            </enabledList>
+            <disabledList defaultKey="System\CurrentControlSet\Services\CDPUserSvc">
+                <item valueName="Start">
+                    <value>
+                        <decimal value="2" />
+                    </value>
+                </item>
+                <item valueName="UserServiceFlags">
+                    <value>
+                        <decimal value="3" />
+                    </value>
+                </item>
+            </disabledList>
+        </policy>
+        <!-- Configure UnistoreSvc -->
+        <policy name="Pol_DisableServices_0004_UnistoreSvc"
+                class="Machine"
+                displayName="$(string.Pol_DisableService_UnistoreSvc)"
+                explainText="$(string.Pol_DisableService_UnistoreSvc_Help)"
+                key="System\CurrentControlSet\Services\UnistoreSvc"
+                >
+            <parentCategory ref="Cat_DisableServices_UserServices" />
+            <supportedOn ref="SUPPORTED_Server_2012R2_up" />
+            <enabledList defaultKey="System\CurrentControlSet\Services\UnistoreSvc">
+                <item valueName="Start">
+                    <value>
+                        <decimal value="4" />
+                    </value>
+                </item>
+                <item valueName="UserServiceFlags">
+                    <value>
+                        <decimal value="0" />
+                    </value>
+                </item>
+            </enabledList>
+            <disabledList defaultKey="System\CurrentControlSet\Services\UnistoreSvc">
+                <item valueName="Start">
+                    <value>
+                        <decimal value="3" />
+                    </value>
+                </item>
+                <item valueName="UserServiceFlags">
+                    <value>
+                        <decimal value="3" />
+                    </value>
+                </item>
+            </disabledList>
+        </policy>
+        <!-- Configure UserDataSvc -->
+        <policy name="Pol_DisableServices_0005_UserDataSvc"
+                class="Machine"
+                displayName="$(string.Pol_DisableService_UserDataSvc)"
+                explainText="$(string.Pol_DisableService_UserDataSvc_Help)"
+                key="System\CurrentControlSet\Services\UserDataSvc"
+                >
+            <parentCategory ref="Cat_DisableServices_UserServices" />
+            <supportedOn ref="SUPPORTED_Server_2012R2_up" />
+            <enabledList defaultKey="System\CurrentControlSet\Services\UserDataSvc">
+                <item valueName="Start">
+                    <value>
+                        <decimal value="4" />
+                    </value>
+                </item>
+                <item valueName="UserServiceFlags">
+                    <value>
+                        <decimal value="0" />
+                    </value>
+                </item>
+            </enabledList>
+            <disabledList defaultKey="System\CurrentControlSet\Services\UserDataSvc">
+                <item valueName="Start">
+                    <value>
+                        <decimal value="3" />
+                    </value>
+                </item>
+                <item valueName="UserServiceFlags">
+                    <value>
+                        <decimal value="3" />
+                    </value>
+                </item>
+            </disabledList>
+        </policy>
+        <!-- Configure WpnUserService -->
+        <policy name="Pol_DisableServices_0006_WpnUserService"
+                class="Machine"
+                displayName="$(string.Pol_DisableService_WpnUserService)"
+                explainText="$(string.Pol_DisableService_WpnUserService_Help)"
+                key="System\CurrentControlSet\Services\WpnUserService"
+                >
+            <parentCategory ref="Cat_DisableServices_UserServices" />
+            <supportedOn ref="SUPPORTED_Server_2012R2_up" />
+            <enabledList defaultKey="System\CurrentControlSet\Services\WpnUserService">
+                <item valueName="Start">
+                    <value>
+                        <decimal value="4" />
+                    </value>
+                </item>
+                <item valueName="UserServiceFlags">
+                    <value>
+                        <decimal value="0" />
+                    </value>
+                </item>
+            </enabledList>
+            <disabledList defaultKey="System\CurrentControlSet\Services\WpnUserService">
+                <item valueName="Start">
+                    <value>
+                        <decimal value="2" />
+                    </value>
+                </item>
+                <item valueName="UserServiceFlags">
+                    <value>
+                        <decimal value="3" />
+                    </value>
+                </item>
+            </disabledList>
+        </policy>
+        <!-- Configure MapsBroker -->
+        <policy name="Pol_DisableServices_0008_MapsBroker"
+                class="Machine"
+                displayName="$(string.Pol_DisableService_MapsBroker)"
+                explainText="$(string.Pol_DisableService_MapsBroker_Help)"
+                key="System\CurrentControlSet\Services\MapsBroker"
+                valueName="Start"
+                >
+            <parentCategory ref="Cat_DisableServices_Other" />
+            <supportedOn ref="SUPPORTED_Server_2012R2_up" />
+            <enabledValue>
+                <decimal value="4" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="2" />
+            </disabledValue>
+        </policy>
+        <!-- Configure Spooler -->
+        <policy name="Pol_DisableServices_0009_Spooler"
+                class="Machine"
+                displayName="$(string.Pol_DisableService_Spooler)"
+                explainText="$(string.Pol_DisableService_Spooler_Help)"
+                key="System\CurrentControlSet\Services\Spooler"
+                valueName="Start"
+                >
+            <parentCategory ref="Cat_DisableServices_Other" />
+            <supportedOn ref="SUPPORTED_Server_2012R2_up" />
+            <enabledValue>
+                <decimal value="4" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="2" />
+            </disabledValue>
+        </policy>
+        <!-- Configure PcaSvc -->
+        <policy name="Pol_DisableServices_0010_PcaSvc"
+                class="Machine"
+                displayName="$(string.Pol_DisableService_PcaSvc)"
+                explainText="$(string.Pol_DisableService_PcaSvc_Help)"
+                key="System\CurrentControlSet\Services\PcaSvc"
+                valueName="Start"
+                >
+            <parentCategory ref="Cat_DisableServices_Other" />
+            <supportedOn ref="SUPPORTED_Server_2012R2_up" />
+            <enabledValue>
+                <decimal value="4" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="3" />
+            </disabledValue>
+        </policy>
+        <!-- Configure ShellHWDetection -->
+        <policy name="Pol_DisableServices_0011_ShellHWDetection"
+                class="Machine"
+                displayName="$(string.Pol_DisableService_ShellHWDetection)"
+                explainText="$(string.Pol_DisableService_ShellHWDetection_Help)"
+                key="System\CurrentControlSet\Services\ShellHWDetection"
+                valueName="Start"
+                >
+            <parentCategory ref="Cat_DisableServices_Other" />
+            <supportedOn ref="SUPPORTED_Server_2012R2_up" />
+            <enabledValue>
+                <decimal value="4" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="2" />
+            </disabledValue>
+        </policy>
+        <!-- Configure WpnService -->
+        <policy name="Pol_DisableServices_0012_WpnService"
+                class="Machine"
+                displayName="$(string.Pol_DisableService_WpnService)"
+                explainText="$(string.Pol_DisableService_WpnService_Help)"
+                key="System\CurrentControlSet\Services\WpnService"
+                valueName="Start"
+                >
+            <parentCategory ref="Cat_DisableServices_Other" />
+            <supportedOn ref="SUPPORTED_Server_2012R2_up" />
+            <enabledValue>
+                <decimal value="4" />
+            </enabledValue>
+            <disabledValue>
+                <decimal value="2" />
+            </disabledValue>
+        </policy>
+
+    </policies>
+</policyDefinitions>
