@@ -82,12 +82,12 @@
             <disabledList defaultKey="System\CurrentControlSet\Services\OneSyncSvc">
                 <item valueName="Start">
                     <value>
-                        <decimal value="3" />
+                        <decimal value="2" />
                     </value>
                 </item>
                 <item valueName="UserServiceFlags">
                     <value>
-                        <decimal value="3" />
+                        <delete />
                     </value>
                 </item>
             </disabledList>
@@ -116,7 +116,7 @@
             <disabledList defaultKey="System\CurrentControlSet\Services\CDPUserSvc">
                 <item valueName="Start">
                     <value>
-                        <decimal value="3" />
+                        <decimal value="2" />
                     </value>
                 </item>
                 <item valueName="UserServiceFlags">
